@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'jekyll/watch'
+require 'jekyll/watcher'
 
 module Jekyll
     module Watcher
