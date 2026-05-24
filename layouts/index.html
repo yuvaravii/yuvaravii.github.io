@@ -1,0 +1,75 @@
+{{- define "main" }}
+
+<div class="home-masthead">
+  <h1>{{ site.Title }}</h1>
+  <div class="tagline">Dispatches from the frontier of artificial intelligence</div>
+</div>
+
+<div class="home-dateline">
+  Coimbatore, India &bull; {{ now.Format "Monday, January 2, 2006" | upper }} &bull; Vol. I
+</div>
+
+{{/* Featured post: first blog post */}}
+{{ $featured := first 1 (where site.RegularPages "Section" "blog") }}
+{{ range $featured }}
+<div class="home-featured">
+  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  <div class="summary">{{ .Params.summary }}</div>
+  <div class="meta">{{ .Date.Format "January 2, 2006" }} &bull; {{ .ReadingTime }} min read</div>
+</div>
+{{ end }}
+
+<div class="home-columns">
+  <div class="home-col">
+    <div class="home-col-header">Latest Writing</div>
+    {{/* Skip featured, show next posts */}}
+    {{ $posts := after 1 (where site.RegularPages "Section" "blog") }}
+    {{ range first 4 $posts }}
+    <div class="home-article">
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Params.summary | truncate 120 }}</p>
+    </div>
+    {{ end }}
+
+    {{ if eq (len $posts) 0 }}
+    <div class="home-article">
+      <p><em>More dispatches coming soon.</em></p>
+    </div>
+    {{ end }}
+  </div>
+
+  <div class="home-col">
+    <div class="home-col-header">Projects &amp; Frameworks</div>
+    {{ $projects := where site.RegularPages "Section" "projects" }}
+    {{ range first 3 $projects }}
+    <div class="home-article">
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Params.summary | truncate 120 }}</p>
+    </div>
+    {{ end }}
+
+    {{ $frameworks := where site.RegularPages "Section" "frameworks" }}
+    {{ range first 2 $frameworks }}
+    <div class="home-article">
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Params.summary | truncate 120 }}</p>
+    </div>
+    {{ end }}
+
+    {{ if and (eq (len $projects) 0) (eq (len $frameworks) 0) }}
+    <div class="home-article">
+      <p><em>Projects and frameworks will appear here.</em></p>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<div class="home-ornament">&mdash; &sect; &mdash;</div>
+
+<div class="home-social">
+  {{ range site.Params.socialIcons }}
+  <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name | upper }}</a>
+  {{ end }}
+</div>
+
+{{- end }}{{/* end main */}}

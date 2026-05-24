@@ -32,16 +32,8 @@ buildExpired = false
   hideSummary = false
   showtoc = true
   tocopen = false
-  defaultTheme = "auto"
-  disableThemeToggle = false
-
-  [params.homeInfoParams]
-    Title = "Hey, I'm Ravishankar (RJ)"
-    Content = """
-AI/ML Engineer at Technosmile Japan. I build intelligent systems, break assumptions with data, and write about what I learn along the way.
-
-Currently: building job-candidate matching algorithms with Random Forest surrogate optimization. Previously: Data Analyst at Merkle/Dentsu.
-"""
+  defaultTheme = "light"
+  disableThemeToggle = true
 
   [[params.socialIcons]]
     name = "github"
@@ -113,7 +105,7 @@ Currently: building job-candidate matching algorithms with Random Forest surroga
     codeFences = true
     guessSyntax = true
     lineNos = false
-    style = "monokai"
+    style = "github"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
