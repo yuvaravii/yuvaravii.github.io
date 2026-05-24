@@ -1,2 +1,235 @@
-/* Career timeline styles — now inherits newspaper theme */
-/* See newspaper.css for the base newspaper styling */
+/* Career Timeline — Newspaper Broadsheet Style */
+/* Uses variables from newspaper.css */
+
+.career-timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+/* === SECTION LABELS (Education & Learning header) === */
+
+.career-section-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--np-text);
+  border-top: 2px solid var(--np-rule);
+  border-bottom: 1px solid var(--np-rule-light);
+  padding: 0.6rem 0;
+  margin: 1.5rem 0 1rem;
+}
+
+/* === CAREER CARDS === */
+
+.career-card {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--np-rule-light);
+  border-top: 3px double var(--np-rule);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 0;
+}
+
+.career-card.current {
+  border-top: 3px double var(--np-accent);
+}
+
+/* === LABELS (badges) === */
+
+.career-label {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.7rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--np-rule-light);
+  background: var(--np-bg-alt);
+  color: var(--np-text-muted);
+}
+
+.career-label.now {
+  background: var(--np-accent);
+  color: var(--np-bg);
+  border-color: var(--np-accent);
+}
+
+.career-label.prev {
+  background: var(--np-bg-alt);
+  color: var(--np-text-muted);
+  border-color: var(--np-rule-light);
+}
+
+.career-label.learning {
+  background: var(--np-bg-alt);
+  color: var(--np-accent);
+  border-color: var(--np-accent);
+}
+
+.career-label.edu {
+  background: var(--np-bg-alt);
+  color: var(--np-text-muted);
+  border-color: var(--np-rule-light);
+}
+
+/* === CARD INNER ELEMENTS === */
+
+.career-location {
+  font-family: 'Lora', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--np-text-hint);
+  margin-bottom: 0.25rem;
+}
+
+.career-company {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--np-text);
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+
+.career-role {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--np-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.career-dates {
+  font-family: 'Lora', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--np-text-hint);
+  margin-bottom: 0.75rem;
+}
+
+.career-desc {
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--np-text);
+  text-align: justify;
+  hyphens: auto;
+  border-top: 1px solid var(--np-rule-light);
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.career-desc ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.career-desc li {
+  margin-bottom: 0.4rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.career-desc li strong {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* === TECH STACK TAGS === */
+
+.career-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--np-rule-light);
+}
+
+.career-stack span {
+  font-family: 'Lora', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--np-text-muted);
+  border: 1px solid var(--np-rule-light);
+  padding: 0.15rem 0.5rem;
+  background: transparent;
+}
+
+/* === ARROWS BETWEEN CARDS === */
+
+.career-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.4rem 0;
+}
+
+.career-arrow-line {
+  width: 1px;
+  height: 24px;
+  background: var(--np-rule-light);
+}
+
+.career-arrow-head {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--np-rule-light);
+}
+
+/* === EDUCATION ROW (side by side) === */
+
+.career-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* === LINK === */
+
+.career-link {
+  display: inline-block;
+  font-family: 'Lora', serif;
+  font-size: 0.8rem;
+  color: var(--np-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--np-rule-light);
+  text-underline-offset: 3px;
+  margin-top: 0.5rem;
+}
+
+.career-link:hover {
+  text-decoration-color: var(--np-accent);
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 640px) {
+  .career-card {
+    padding: 1rem 1.25rem;
+  }
+
+  .career-company {
+    font-size: 1.15rem;
+  }
+
+  .career-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .career-row .career-card + .career-card {
+    margin-top: 1rem;
+  }
+}
