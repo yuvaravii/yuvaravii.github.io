@@ -8,7 +8,7 @@ ShowToc: false
 
 ## Who I Am
 
-I'm Ravishankar J — most people call me RJ. I'm an AI/ML Engineer based in Coimbatore, Tamil Nadu, currently working at Technosmile Japan's India office.
+I'm Ravishankar. I'm an AI/ML Engineer based in Coimbatore, Tamil Nadu, currently working at Technosmile Japan's India office.
 
 <!-- TODO: Replace this section with your own narrative. Don't make it a resume dump.
      Tell the story: where you started, what you care about, where you're headed.
